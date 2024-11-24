@@ -18,6 +18,7 @@ header{
     background-color: white;
     background-attachment: fixed;
     width: 100%;
+    position: relative;
 }
 header::after{
     content: '';
@@ -41,7 +42,7 @@ header::after{
     
   }
 .logo{
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight:200;
     z-index: 4;
     margin: 0;
@@ -64,13 +65,43 @@ header::after{
     font-size: 1.5rem;
     font-weight:200;
     list-style: none;
+    position:sticky;
+    z-index: 9999;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 
 
-.menu a{
+nav a{
     text-decoration: none;
     color: white;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    position: relative;
+    z-index: 9999;
+    padding-bottom: 2px;
+}
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.2px;
+    padding-bottom: 2px;
+    border-radius: 4px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+    
+  }
+nav a:hover::before{
+    transform-origin: left;
+    transform: scaleX(1);
+
 }
 
 .imgContainer{
@@ -95,6 +126,11 @@ header::after{
     text-align: center;
     color: #D9D9D9;
     font-family: "Kumbh Sans", sans-serif;
+    position:sticky;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .discoverContainer span{
 color: black;
@@ -121,6 +157,7 @@ color: black;
     margin-top: -35vh;
     z-index: 6666;
     padding: 40px;
+    transition: 0.3s ease-in-out;
 }
 .discover h3, .borrow h3, .thrive h3{
     text-align: center;
@@ -135,7 +172,7 @@ color: black;
 .borrow{
     grid-row: 1 / -1;
     grid-column: 6/ 10;
-
+    transition: 0.3s ease-in-out;
     padding: 5%;
     height: 400px;
     border-radius: 10%;
@@ -157,11 +194,29 @@ color: black;
     margin-top: -35vh;
     z-index: 6666;
     padding: 40px;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.discover:hover{
+    color: #F4F5F7;
+    background-color: #1E1E1E;
+}
+
+.thrive:hover{
+    color: #F4F5F7;
+    background-color: #1E1E1E;
+}
+.borrow:hover{
+    background-color: #F4F5F7;
+    color: #1E1E1E;
 }
 
 .whatNew{
     background-color: #D9D9D9;
     padding: 5%;
+    border-bottom-left-radius: 7%;
+    border-bottom-right-radius: 7%;
 }
 .whatNew h3{
     font-size: 5rem;
@@ -173,14 +228,18 @@ color: black;
 .Trending{
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 8%;
+    /* gap: 10%; */
+    row-gap: 10%;
+    width: 100%;
+    padding-bottom: 20%;
 
 }
 .one{
     grid-row: 1/2;
     grid-column: 1/2;
+    margin-bottom: 2%;
 }
 .two{
     grid-row: 1/2;
@@ -212,7 +271,99 @@ color: black;
     grid-column: 4/5;
 }
 .Trending img{
-    width: 200px;
-    height: 300px;
+    width: 240px;
+    height: 380px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+
+}
+.review{
+    width: 100%;
+    background-color: #49454F;
+}
+.circle{
+    width: 63vh;
+    height: 63vh;
+    border-radius: 100%;
+    margin: 200px;
+    border: 2px solid #D9D9D9;
+    position: relative;
+    border-right-color: transparent; 
+
+
+}
+.circle::before{
+    content: "";
+    width: 50vh;
+    height: 50vh;
+    border-radius: 100%;
+    margin: 10px;
+    border: 2px solid #D9D9D9;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-right-color: transparent; 
+
 }
 
+.circle::after{
+    content: "";
+    width: 50vh;
+    height: 50vh;
+    margin: 10px;
+    border: 2px solid #D9D9D9;
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-left-color: transparent; 
+    border-top-color: transparent; 
+    border-bottom-color: transparent; 
+
+}
+
+
+
+.c-shape {
+    width: 200px; /* Outer diameter */
+    height: 200px; /* Outer diameter */
+    border: 15px solid black; 
+    border-radius: 50%; 
+    background-color: transparent; 
+
+  }
+  
+  .c-shape {
+    position: relative;
+    width: 200px; /* Diameter of the outer circle */
+    height: 200px;
+    border: 15px solid black; /* Thickness of the "C" border */
+    border-radius: 50%; /* Makes the shape circular */
+    background-color: transparent; /* Hollow inside */
+    overflow: hidden; /* Ensures no elements overflow */
+  }
+  
+  /* Cutout section */
+  .c-shape::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 140px; /* Diameter of the cutout */
+    height: 140px;
+    background-color: white; /* Matches background color */
+    border-radius: 50%; /* Ensures the cut is circular */
+    border: 15px solid black; /* Creates the border for the cut */
+    clip-path: polygon(100% 0, 0 0, 0 50%, 100% 50%); /* Creates a semi-circle cut */
+  }
+  
