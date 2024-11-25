@@ -14,8 +14,9 @@
                 <a href=""><li>Home</li></a>
                 <a href=""><li>Contact</li></a>
                 <a href=""><li>About</li></a>
+                <a href=""><div class="joinButton">Join</div></a>
                </ul>
-            <a href=""><div class="joinButton">Join</div></a>
+    
         </nav>
     <div class="discoverContainer">Discover. <span>Borrow</span>. Thrive</div>
     </header>
@@ -36,34 +37,88 @@ Borrowing books has never been more convenient or hassle-free. Our system stream
     <p>Grow, learn, and thrive with the resources we provide. From timeless classics to cutting-edge research, our library is a hub for personal and intellectual growth. Expand your horizons, gain new skills, or simply escape into a great story. Every book you borrow brings you closer to achieving your goals and enriching your life. Join a community of readers who share your passion for discovery and let the library be a cornerstone for your continued success and fulfillment.</p>
         </div>
     </section>
-    <section class="whatNew">
-        <h3>What's New</h3>
-        <div class="Trending">
-            <img class="one" src="../images/HomePage_images/9780593489277.jpeg" alt="">
-            <img class="two" src="../images/HomePage_images/9780593498026.jpeg" alt="">
-            <img class="three" src="../images/HomePage_images/9781400064625.jpeg" alt="">
-            <img class="four" src="../images/HomePage_images/9780593818749.jpeg" alt="">
-            <img class="five" src="../images/HomePage_images/9780451491336.jpeg" alt="">
-            <img class="six" src="../images/HomePage_images/9780593467978.jpeg" alt="">
-            <img class="seven" src="../images/HomePage_images/9780593653227.jpeg" alt="">
-            <img class="eight" src="../images/HomePage_images/9780593540435.jpeg" alt="">
+    <section id="whatNew">
+        <div class="whatNew">
+            <h3>What's New</h3>
+            <div class="Trending">
+                <div class="one"><img  src="../images/HomePage_images/9780593489277.jpeg" alt=""></div>
+                <div class="two"><img src="../images/HomePage_images/9780593498026.jpeg" alt=""></div>
+                <img class="three" src="../images/HomePage_images/9781400064625.jpeg" alt="">
+                <img class="four" src="../images/HomePage_images/9780593818749.jpeg" alt="">
+                <img class="five" src="../images/HomePage_images/9780451491336.jpeg" alt="">
+                <img class="six" src="../images/HomePage_images/9780593467978.jpeg" alt="">
+                <img class="seven" src="../images/HomePage_images/9780593653227.jpeg" alt="">
+                <img class="eight" src="../images/HomePage_images/9780593540435.jpeg" alt="">
+            </div>
         </div>
+
     </section>
     <section class="review">
-        <div class="firstRev">
+        <div class="firstRev" id="review" onpointerover="changeStar()" >
+            <div class="heading">
+                <img id="Avatar" src="../images/HomePage_images/3D Avatars/Avatars/3d_avatar_10.png" alt="">
+                <div class="nameWithStars">
+                    <h2>Mohamed Hany</h2>
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
 
-        </div>
-        <div class="circle" id="circleOne">
-            <div class="cut"></div>
+
+                </div>
+            </div>
+            <p>
+                I absolutely love using Readify! As a student, it’s a game-changer for me. I can quickly search for textbooks, borrow them online, and have them delivered right to my device or pickup location. The platform is super easy to navigate, and the availability status of books is always up-to-date. I also love the recommendations based on my reading history—it's like having a personal librarian! It’s streamlined my study process and saved me so much time. Highly recommend!"
+            </p>
         </div>
 
-        <div class="SecondRev">
-            
+        <div class="secondRev" onpointerover="changeStar()" >
+            <div class="heading">
+                <img id="Avatar" src="../images/HomePage_images/3D Avatars/Avatars/3d_avatar_27.png" alt="">
+                <div class="nameWithStars">
+                    <h2>Sama Abdallah</h2>
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img  src="../images/HomePage_images/starFilled2.svg" alt="">
+
+
+                </div>
+            </div>
+            <p>
+                I’ve been using Readify for a few months now, and it’s been fantastic! The website is clean, easy to use, and the design is modern, which makes finding my favorite books a breeze. Whether it's for research or just some leisure reading, I can always find what I’m looking for. The borrow system is smooth, and I never have to worry about overdue fines thanks to the handy reminders. This has truly transformed the way I interact with my local library!            </p>
         </div>
-        <div class="circle" id="circleTwo">
-            <div class="cut"></div>
-        </div>
+
 
     </section>
+
+    <footer>
+<div class="sections">
+    <div class="aboutUs">
+        <h1>About Us</h1>
+        <p>Readify is dedicated to providing a seamless library experience. Our platform allows you to discover, borrow, and return books with ease. We aim to empower readers and learners from all walks of life by making knowledge more accessible and engaging.</p>
+    </div>
+    <div class="quickLinks">
+        <ul>
+            <h1>Quick Links</h1>
+            <a href="#"><li>Home</li></a>
+            <a href="#whatNew"><li>What's New</li></a>
+            <a href="#review"><li>Reviews</li></a>
+            <a href=""><li>Sign Up</li></a>
+        </ul>
+    </div>
+    <div class="contactUs">
+        <h1>Contact Us</h1>
+        <ul>
+            <li>Email: Youssef.ashraf16@msa.edu.eg</li>
+            <li>Phone: +20 1278043245</li>
+            <li>Address: MSA University.</li>
+        </ul>
+    </div>
+</div>
+    <p class="copyRight"> &copy;2024 <a href="">Readify.</a>All rights reserved.</p>
+    </footer>
 </body>
 </html>
