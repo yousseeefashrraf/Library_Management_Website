@@ -20,7 +20,7 @@
         </nav>
     <div class="discoverContainer">Discover. <span>Borrow</span>. Thrive</div>
     </header>
-    <section class="cardsContainer">
+    <section class="cardsContainer" >
         <div class="discover">
             <h3>Discover.</h3>
             <p>
@@ -40,10 +40,10 @@ Borrowing books has never been more convenient or hassle-free. Our system stream
     <section id="whatNew">
         <div class="whatNew">
             <h3>What's New</h3>
-            <div class="Trending">
-                <div class="one"><img  src="../images/HomePage_images/9780593489277.jpeg" alt=""></div>
-                <div class="two"><img src="../images/HomePage_images/9780593498026.jpeg" alt=""></div>
-                <img class="three" src="../images/HomePage_images/9781400064625.jpeg" alt="">
+            <div class="Trending" >
+                <div class="one animation"  ><img  src="../images/HomePage_images/9780593489277.jpeg" alt=""></div>
+                <div class="two"  ><img src="../images/HomePage_images/9780593498026.jpeg" alt=""></div>
+                <img class="three"   src="../images/HomePage_images/9781400064625.jpeg" alt="">
                 <img class="four" src="../images/HomePage_images/9780593818749.jpeg" alt="">
                 <img class="five" src="../images/HomePage_images/9780451491336.jpeg" alt="">
                 <img class="six" src="../images/HomePage_images/9780593467978.jpeg" alt="">
@@ -54,16 +54,16 @@ Borrowing books has never been more convenient or hassle-free. Our system stream
 
     </section>
     <section class="review">
-        <div class="firstRev" id="review" onpointerover="changeStar()" >
+        <div class="firstRev" id="review" onmouseover="changeStar()" onmouseout="getBackToNormal()" >
             <div class="heading">
                 <img id="Avatar" src="../images/HomePage_images/3D Avatars/Avatars/3d_avatar_10.png" alt="">
                 <div class="nameWithStars">
                     <h2>Mohamed Hany</h2>
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStar" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStar" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStar" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStar" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStar" src="../images/HomePage_images/starFilled2.svg" alt="">
 
 
                 </div>
@@ -73,16 +73,16 @@ Borrowing books has never been more convenient or hassle-free. Our system stream
             </p>
         </div>
 
-        <div class="secondRev" onpointerover="changeStar()" >
+        <div class="secondRev" onmouseover="changeStarForTwo()" onmouseout="getBackToNormalForTwo()" >
             <div class="heading">
                 <img id="Avatar" src="../images/HomePage_images/3D Avatars/Avatars/3d_avatar_27.png" alt="">
                 <div class="nameWithStars">
                     <h2>Sama Abdallah</h2>
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img src="../images/HomePage_images/starFilled2.svg" alt="">
-                    <img  src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStarTwo" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStarTwo" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStarTwo" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStarTwo" src="../images/HomePage_images/starFilled2.svg" alt="">
+                    <img class="imgStarTwo" src="../images/HomePage_images/starFilled2.svg" alt="">
 
 
                 </div>
@@ -121,4 +121,7 @@ Borrowing books has never been more convenient or hassle-free. Our system stream
     <p class="copyRight"> &copy;2024 <a href="">Readify.</a>All rights reserved.</p>
     </footer>
 </body>
+<script src="homeScript.js"></script>
+
 </html>
+
