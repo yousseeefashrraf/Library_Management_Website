@@ -19,14 +19,14 @@ document.getElementById('forgotPassword').addEventListener('click', function(eve
 document.getElementById('signUpLink').addEventListener('click', function(event) {
     event.preventDefault(); 
     document.getElementById('loginForm').style.display = 'none';  
-    document.getElementById('signUpForm').style.display = 'block'; 
+    document.getElementById('signUpForm').style.display = 'flex'; 
 });
 
 
 document.getElementById('loginLink').addEventListener('click', function(event) {
     event.preventDefault(); 
     document.getElementById('signUpForm').style.display = 'none'; 
-    document.getElementById('loginForm').style.display = 'block'; 
+    document.getElementById('loginForm').style.display = 'flex'; 
 });
 
 document.getElementById('signUpForm').addEventListener('submit', function(event) {
@@ -38,5 +38,17 @@ document.getElementById('signUpForm').addEventListener('submit', function(event)
     console.log('Sign Up Email:', signUpEmail);
     console.log('Sign Up Password:', signUpPassword);
     console.log('Confirm Password:', confirmPassword);
-    alert('Sign-up functionality not implemented.');
+
 });
+
+function checkPassword(){
+    const pass = document.getElementById("signUpPassword").value;
+    const confirmPass = document.getElementById("confirmPassword").value;
+
+    if(pass != confirmPass){
+        alert("Password doesn't match");
+
+    } else {
+        alert('Sign-up functionality not implemented.');
+    }
+}
