@@ -295,11 +295,11 @@ color: black;
     width: 100%;
 
 }
-.one:hover, .two:hover{
+.one:hover, .two:hover, .three:hover, .five:hover,.six:hover, .seven:hover, .eight:hover  {
 
     z-index: 9999;
 }
-.one:hover img, .two:hover img{
+.one:hover img, .two:hover img, .three:hover img,.four:hover img,.five:hover img,.six:hover img, .seven:hover img, .eight:hover img{
     border-top-right-radius:0% ;
     border-bottom-right-radius:0% ;
     border-left: solid 2px white;
@@ -338,7 +338,7 @@ color: black;
 }
 
 
-.one:hover::after, .two:hover::after {
+.one:hover::after, .two:hover::after,.three:hover::after,.four:hover::after,.five:hover::after,.six:hover::after,.seven:hover::after,.eight:hover::after {
     transform: scale(1.1);
     
 }
@@ -369,6 +369,183 @@ color: black;
     display: flex;
     justify-self: center;
     transform-origin: left;
+    transition: 0.3s  ease-in-out;
+
+}
+.three::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind3.png");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: 90%;
+    transform: scale(0);
+    z-index: -8;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    transform-origin: left;
+    transition: 0.3s  ease-in-out;
+
+}
+.four::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind4.png");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    z-index: 999999999;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: -70%;
+    transform: scale(0);
+    transform-origin: right;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    transition: 0.3s  ease-in-out;
+
+}
+.five::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind5.jpg");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: 90%;
+    transform: scale(0);
+    z-index: -8;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    transform-origin: left;
+    transition: 0.3s  ease-in-out;
+
+}
+
+
+.six::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind6.png");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: 90%;
+    transform: scale(0);
+    z-index: -8;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    transform-origin: left;
+    transition: 0.3s  ease-in-out;
+
+}
+
+.seven::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind7.png");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: 90%;
+    transform: scale(0);
+    z-index: -8;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
+    transform-origin: left;
+    transition: 0.3s  ease-in-out;
+
+}
+.eight::after{
+    content: "";
+    background-image: url("../images/HomePage_images/behind8.png");
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    border-top-right-radius:5% ;
+    border-bottom-right-radius:5% ;
+    border-left: solid 2px white;
+    border-right: solid 4px white;
+    pointer-events: none;
+    top: 0px;
+    bottom: 10px;
+    right: inherit;
+    left: -70%;
+    transform: scale(0);
+    transform-origin: right;
+    z-index: -8;
+    background-color: white;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-self: center;
     transition: 0.3s  ease-in-out;
 
 }
