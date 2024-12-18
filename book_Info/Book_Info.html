@@ -3,61 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book_Info</title>
+    <title>Book Name</title>
     <link rel="stylesheet" href="Book_Info.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.svg">
+
 </head>
 
 <body>
 
     <header>
+
         <nav>
-            <p>READIFY</p>
-            <ul>
-                <li>Home</li>
-                <li>Contact</li>
-                <li>About</li>
+
+            <div class="logo">READIFY</div>
+
+            <ul class="navbar">
+                <li><a href="">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">About</a></li>
             </ul>
-            <input type="text" placeholder="Hinted search text">
+
+            <div class="search-bar">
+                <input type="text"  placeholder="Hinted search text">
+            </div>
+            
         </nav>
+
     </header>
 
     <Main>
 
-        <div>
-            <img src="Book_info_Pic.jpeg" alt="">
+        <div class="book-container">
+
+            <div class="book-info">
+
+                <img src="../images/BookInfo_Images/9780593540435.jpeg" alt="The Celebrants book cover">
+
+                <div class="book-details">
+
+                    <h1>The Celebrants: A Read With Jenna Pick</h1>
+                    
+                    <div >
+                        <p class="author">by Steven Rowley</p>
+                        
+                        <button class="siction">fiction</button>
+                        <button class="iterature">literature</button>
+                        
+
+                    </div>
+                    
+                    <p class="price">
+                        <span class="current-price">$18.00</span>
+                        <span class="original-price">$22.99</span>
+                        <span class="availability">Available</span>
+                    </p>
+                    
+
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <div class="rating">★★★★★</div>
+                <button class="save-button">Save</button>
+
+            </div>
+
+            <div>
+
+            <button class="buy-button">Buy</button>
+            <button class="borrowButton">Borrow 5$</button>
+
+            </div>
+
+            <div ><hr width="45%"></div>
+
+            <div class="book-description">
+
+                <p>
+                    It’s been a minute since Jordan Vargas last saw his college friends and 28 years since their graduation from Berkeley 
+                    when their adult lives officially began. Now Jordan, Jordy, Naomi, Craig, and Marielle find themselves at the brink 
+                    of a new decade, with all the responsibilities of adulthood, yet no closer to having their lives figured out. 
+                    A deeply honest tribute to the growing pains of selfhood and the people who keep us going, coupled with Steven 
+                    Rowley’s signature humor and heart, The Celebrants is a moving tale about the false invincibility of youth and the 
+                    beautiful ways in which friendship helps us celebrate our lives, even amid the deepest challenges of living.
+                </p>
+
+            </div>
+
         </div>
 
-        <h1>he Celebrants: A Read With Jenna Pick</h1>
-        <p>by Steven Rowley</p>
+        <div class="reviewDivider"><hr></div>
 
-        <p>
+        <h2 class="reviewText">Reviews</h2>
+
+        <div class="reviews-section">
+
+            <div class="review-box">
+
+                <div class="user-info">
+
+                    <img src="../images/BookInfo_Images/userImg.png" alt="User Icon" >
+
+                    <div>
+
+                    <p class="username">Username</p>
+                    <div class="rating">★★★★★</div>
+
+                    </div>
+                    
+                </div>
+
+                <textarea placeholder="Write your comment here."></textarea>
+
+            </div>
+
             
-            <span >$18.00</span>
-            <span >$22.99</span>
-            <span >Available</span>
+        </div>
 
-        </p>
-
-        <button>BUY</button>
-
-        <p>
-        It’s been a minute since Jordan Vargas last saw his college friends and 28 years since their graduation from Berkeley 
-        when their adult lives officially began. Now Jordan, Jordy, Naomi, Craig, and Marielle find themselves at the brink 
-        of a new decade, with all the responsibilities of adulthood, yet no closer to having their lives figured out. 
-        A deeply honest tribute to the growing pains of selfhood and the people who keep us going, coupled with Steven 
-        Rowley’s signature humor and heart, The Celebrants is a moving tale about the false invincibility of youth and the 
-        beautiful ways in which friendship helps us celebrate our lives, even amid the deepest challenges of living.
-        </p>
-
-
-        <h2>Reviews</h2>
-        <img src="Review.jpg" alt="">
-        <textarea placeholder="Write your comment here."></textarea>
         <p class="no-reviews">No reviews yet. Be the first to comment!</p>
-
-
-
+        
     </Main>
     
 </body>
+
 </html>
