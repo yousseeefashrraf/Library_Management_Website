@@ -47,4 +47,55 @@ create table belongsTo(
     FOREIGN KEY (cat_Id) REFERENCES category(catId),
     FOREIGN KEY (book_ID) REFERENCES book(bookID),
 );
+create table review(
+    reviewId int PRIMARY key,
+    reviewComment VARCHAR(200),
+    reviewRating FLOAT,
+    userID int,
+    FOREIGN KEY (userID) REFERENCES bookUser(userId)
+);
+CREATE table bookAdmin(
+    adminID int PRIMARY key,
+    adminFN VARCHAR(17),
+    adminLN VARCHAR(17),
+    adminRole VARCHAR(20)
+    );
+
+create table editBook(
+    book_Id int,
+    admin_Id int,
+    PRIMARY KEY (book_Id, admin_Id) ,
+    FOREIGN KEY (admin_Id) REFERENCES bookAdmin(adminID) ,
+    FOREIGN KEY (book_Id) REFERENCES book(bookID)
+);
+create table bookRate (
+    book_Id int,
+    review_Id int,
+    PRIMARY KEY (book_Id, review_Id) ,
+    FOREIGN KEY (review_Id) REFERENCES review(reviewId) ,
+    FOREIGN KEY (book_Id) REFERENCES book(bookID)
+);
+
+create table addToFav(
+    user_ID int,
+    book_Id int,
+    PRIMARY KEY (book_Id, user_ID) ,
+    FOREIGN KEY (user_ID) REFERENCES bookUser(userId),
+    FOREIGN KEY (book_Id) REFERENCES book(bookID)
+);
+create table buy(
+    user_ID int,
+    book_Id int,
+    PRIMARY KEY (book_Id, user_ID) ,
+    FOREIGN KEY (user_ID) REFERENCES bookUser(userId),
+    FOREIGN KEY (book_Id) REFERENCES book(bookID)
+);
+create table borrow(
+    user_ID int,
+    book_Id int,
+    ReturnStatus BINARY,
+    PRIMARY KEY (book_Id, user_ID) ,
+    FOREIGN KEY (user_ID) REFERENCES bookUser(userId),
+    FOREIGN KEY (book_Id) REFERENCES book(bookID)
+);
 select * from bookUser, fine
