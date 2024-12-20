@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar Example</title>
+    <style>
+        input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #suggestions {
+            border: 1px solid #ccc;
+            max-width: 200px;
+            display: none;
+            position: absolute;
+            background-color: white;
+            z-index: 1;
+        }
+        .suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="search" placeholder="Search...">
+<div id="suggestions"></div>
+
+<script>
+    const searchBar = document.getElementById('search');
+    const suggestionsBox = document.getElementById('suggestions');
+    const suggestions = ["apple", "banana", "cherry", "grape", "orange", "pear", "pineapple"];
+
+    searchBar.addEventListener('input', function() {
+        const query = searchBar.value.toLowerCase();
+        suggestionsBox.innerHTML = '';
+        if (query) {
+            const filteredSuggestions = suggestions.filter(item => item.toLowerCase().includes(query));
+            filteredSuggestions.forEach(item => {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.classList.add('suggestion-item');
+                suggestionItem.textContent = item;
+                suggestionItem.addEventListener('click', function() {
+                    searchBar.value = item;
+                    suggestionsBox.innerHTML = '';
+                });
+                suggestionsBox.appendChild(suggestionItem);
+            });
+            suggestionsBox.style.display = 'block';
+        } else {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!searchBar.contains(event.target)) {
+            suggestionsBox.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

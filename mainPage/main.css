@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+
+body {
+    background-color: black;
+    margin: 0;
+}
+#UserAvatar{
+    height: 50px;
+}
+nav {
+    display: flex;
+    justify-self: center;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+nav a{
+    font-family: "Kumbh Sans", sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+
+}
+.searchContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 70%;
+    justify-content: flex-end;
+}
+
+.searchContainer input {
+    height: 17px;
+    width: 25%;
+    border-radius: 30px;
+    padding: 10px;
+    font-family: "Kumbh Sans", sans-serif;
+}
+
+#onlyForYouCont .title h3{
+    color: white;
+    font-family: "Kumbh Sans", sans-serif;
+
+}
+#onlyForYouCont .title {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(12,1fr);
+    height:160px;
+    position: relative;
+    
+}
+#onlyForYouCont{
+    width: 100%;
+}
+ .darkGrey{
+    background-color: #d9d9d9d2;
+
+    opacity: 0.26;
+    height: 45px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.darkGrey.one{
+    display: inline;
+    display: grid;
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+}
+.darkGrey.two{
+    display: inline;
+    grid-column: 6/-1;
+    grid-row: 1/-1;
+}
+.lightGrey.one{
+    display: inline;
+    grid-column: 4/-1;
+    grid-row: 8/-1;
+}
+.lightGrey.two{
+    display: inline;
+    grid-column: 1/-1;
+    grid-row: 10/-1;
+}
+
+.title h3{
+    text-align: left;
+    font-size: 40px;
+    left: 16%;
+    display: inline;
+    position: fixed;
+}
+
+
+.lightGrey{
+    background-color: #D9D9D9;
+    opacity: 0.5;
+    height: 45px;
+    width: 150px;
+    border-radius: 10px;
+}
