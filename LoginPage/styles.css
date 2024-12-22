@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 
+
+
 body {
     font-family: "Kumbh Sans", sans-serif;
     margin: 0;
@@ -10,9 +12,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #d11d1d;
     overflow: hidden; /* Prevent body scrolling */
 }
+
 
 #showPass{
     position: relative;
@@ -68,7 +71,7 @@ body {
     height: 70%;
     justify-content: space-around;
 }
-#loginForm p, #signUpForm p{
+#loginForm p, #signUpForm p, #su p{
     text-align: center;
 
 }
@@ -87,13 +90,7 @@ body {
 ::placeholder{
     font-family: "Kumbh Sans", sans-serif;
 }
-#singInOrUp{
-    margin-top: 50px;
-    height: 3vw;
-    font-size: 1.1vw;
-    font-family: "Kumbh Sans", sans-serif;
 
-}
 /* Styling for the login form section */
 .login-form {
     flex: 1;
@@ -195,7 +192,15 @@ form{
 .login-form button:hover {
     background-color: #0056b3;
 }
+#singInOrUp, #su {
+    margin-top: 50px;
+    height: 3vw;
+    font-size: 1.1vw;
+    background-color: #1F7AE2;
+    color: white;
+    font-family: "Kumbh Sans", sans-serif;
 
+}
 @media screen and (max-width:700px) {
     .library-image{
         display: none;

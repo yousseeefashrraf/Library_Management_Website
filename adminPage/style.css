@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+
+body{
+    font-family: "Kumbh Sans", sans-serif;
+
+    background-color: black;
+    color: aliceblue;
+}
+#UserAvatar{
+    height: 50px;
+}
+nav {
+    display: flex;
+    justify-self: center;
+    position: relative;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+nav a{
+    font-family: "Kumbh Sans", sans-serif;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.menu{
+    display: block;
+    margin-top: 30px;
+    transition: 0.5s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 93%;
+}
+
+.catalog{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: fit-content;
+    position: relative;
+
+    border-radius: 40px;
+     width: 5vw;
+    padding-bottom: 20px;
+    transition: 0.4s ease-in-out;
+
+
+}
+
+.co{
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    width: 5vw;
+    border-radius: 40px;
+    position:absolute;
+    background-color: #1F7AE2;
+    top: 10vh;
+    transition: 0.5s ease-in-out;
+
+
+}
+.containerMinue{
+    display: none;
+    transition: 0.3s ease-in-out;
+
+}
+
+.containerMinue a{
+    transition: 0.4s ease-in-out;
+}
+
+.containerMinue a:hover{
+    rotate: 30deg;
+    transform: scale(1.2);
+    z-index: 49994949494;
+    transition: 0.3s ease-in-out;
+
+}
+.catalog img{
+    padding: 14px;
+    height: 5vh;
+    object-fit: contain;
+    transition: 0.3s ease-in-out;
+    z-index: 1000000;
+
+
+}
+#UserAvatar{
+    transform: scale(1.6);
+    margin-bottom: 30px;
+}
+
+.catalog:hover .co{
+    position: fixed;
+    transition: 0.3s ease-in-out;
+    background-color: #d9d9d9;
+    height: 10vh;
+
+}
+.catalog:hover .containerMinue{
+    z-index: 1000000;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.catalog:hover{
+    z-index: 1000000;
+    background-color: #D9D9D9;
+
+}
+
+.catalog:hover .co:hover{
+    display: flex;
+    transition: 2s ease-in-out;
+
+}
+
+.catalog:hover .menu:hover .co{
+    display: flex;
+    transition: 0.4s ease-in-out;
+
+}
+
+.hdr{
+    padding-left: 10vh;
+    font-size: 2rem;
+    display: flex;
+
+}
+.hdr img{
+    padding-left: 10vh;
+    height: 90vh;
+    justify-self: center;
+    align-self: center;
+    margin-left: 10vh;
+
+}
+span{
+    color: rgb(95, 101, 158);
+}
+.hdr h3,header h1{
+    margin-top: 30vh;
+}
+.hdr h1{
+    margin-top: 20vh;
+}
+.hdr a {
+    background-color: #D9D9D9;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10vh;
+    color: #1F7AE2;
+    font-weight: 700;
+    font-size: 1.7rem;
+    border-radius: 25px;
+    padding: 2.4vh;
+    transition: 0.5s ease-in-out;}
+
+.hdr a:hover {
+    background-color: #1F7AE2 ;
+    transform: scale(1.1);
+    color: #D9D9D9;
+ 
+}
+.books{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+.book{
+    background-color: #D9D9D9;
+    color: #1F7AE2;
+    border-radius: 25px;
+    padding: 0.4vh;
+    width: 70%;
+    margin: 2vh auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    font-size: 1.4rem;
+}
+.book p{
+    color: rgb(95, 101, 158);
+}
+
+.book img{
+    height: 5vh;
+}
+
+.books img{
+
+}
+.books img:hover{
+    rotate: 30deg;
+    transition: 0.5s ease-in-out;
+}

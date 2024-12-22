@@ -1,13 +1,21 @@
-
+<?php
+    session_start();
+    $logedOut = !isset($_SESSION['status']) || $_SESSION['status'] !== "registered";
+    if (!$logedOut) {
+        header("Location: ../mainPage/main.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Readify | Login</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="../images/logo.svg">
+
+    <link rel="stylesheet" href="styles.css?v=3.0">
+
 </head>
 <body>
     <div class="container">
@@ -36,16 +44,18 @@
                             <img id="eyeShown" src="../images/LogIn_Images/Eye.png" alt="" style="display: none;" onclick="showPasswordContent()">
                             <img id="eyeOff" src="../images/LogIn_Images/Eye off.png" alt="" style="display: none;" onclick="hidePasswordContent()">
                         </div>
+                        <p id="Wrong2" style="display: none; color: red; text-align: center;">Email or password doesn't exist!</p>
+
                         <a href="#" id="forgotPassword">Forgot password?</a>
-                        <input type="submit"  name="login" id="singInOrUp" value = "Log in" >
-    
+                        <input id="singInOrUp" type="submit"  name="login"  value = "Log in" >
+
                     </form>
 
 
                     <p>Don't have an account? <a href="#" id="signUpLink">Sign Up</a></p>
                 </div>
 
-                <?php 
+                <?php
     $hostname = "l2i9a.h.filess.io"; 
     $database = "Readify_tracemayup";  // Database name
     $port = "3306";                    // MySQL port
@@ -59,49 +69,87 @@
         $conn = new PDO($dsn, $username, $password);  // PDO connection
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
     } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();  
         exit();  
     }
-        try{
-            $query = "select * from bookUser where userID = 1000";
-            $stmt = $conn->prepare($query);  // Prepare the SQL query
-            $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e){
-            echo "error";
-        }
-
         
-
-        if(isset($_POST['login'])){
+     if(isset($_POST['login'])){
             $email = trim($_POST['em']);
             $email = strtolower($email);
             $userpassword = trim($_POST['pass']);
-            $query = 'Select userEmail, userPass, userId from bookUser where userEmail =\'' . $email . '\' and userPass =\'' . $userpassword . "'";
+            $query = 'Select userEmail, userId, userPass from bookUser where userEmail =\'' . $email . "'";
             $stmt = $conn->prepare($query);
             $stmt->execute();
             $info = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if ($stmt->rowCount() == 0) {
+            $emailExists = false;
+            $hashedPassword = $info['userPass'];
+            if ($info && password_verify($userpassword, $hashedPassword)) {
+                $_SESSION['userId'] = $info['userId'];
+                $_SESSION['avatar'] = "../images/LogIn_Images/DogAvatar.png";
+                $_SESSION['status'] = "registered";
+                $_SESSION['role'] = 'user';
+                header("Location: ../mainPage/main.php");
+                exit; 
+            }   else {
+                if(ctype_digit($userpassword)){
+                    $query = "Select * from bookAdmin where adminEmail = '{$email}' and adminId = {$userpassword}";
+                    $stmt = $conn->prepare($query);
+                    $stmt->execute();
+                    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if($info === false){
+                        $wrongEmail = true;
+                        exit;
+                    } else {
+                        $_SESSION['adminName'] = "{$info['adminFN']} {$info['adminLN']}";
+                        $_SESSION['adminId'] = $info['adminId'];
+                        $_SESSION['role'] = 'admin';
+                        header("Location: ../adminPage/admin.php");
+                    }
+                }
+                
+             else {
+                $wrongEmail = true;
 
-                echo "<p style='color:red;'>Email or password not found!</p>";
-
-                exit;
-            } else {
-                header("Location: ../mainPage/main.php"); 
-                exit;
             }
-    
-
-
-
-            header("Location: Project.php"); 
             
-        } 
-        
-                ?>
+            }     
+     }
+    
+        if(isset($_POST['sign'])){
+            $email = trim($_POST['signUpEmail']);
+            $email = strtolower($email);
+            $userpassword = trim($_POST['signUpPassword']);
+            $userConfirm = trim($_POST['confirmPassword']);
+            $hashedPassword = password_hash($userpassword, PASSWORD_DEFAULT);
+            $joinYear = $currentYear = date("Y");
+            $joinMonth = $currentYear = date("m");
+            $joinDay = $currentYear = date("d");
+            $Avatar = "../images/LogIn_Images/DogAvatar.png";
+            $query = "SELECT MAX(userID) AS userId FROM bookUser";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $userId = $result['userId']+1; 
+            $query = 'Select userEmail, userPass, userId from bookUser where userEmail =\'' . $email . "'";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            $info = $stmt->fetch(PDO::FETCH_ASSOC);
+            $emailExists = ($stmt->rowCount() > 0) ? true : false;
 
-                <!-- Sign Up Form -->
+            if ($stmt->rowCount()==0) {
+            $query = "INSERT INTO bookUser 
+            VALUES ($userId, '$Avatar', '$email', '$hashedPassword', $joinDay, $joinMonth, $joinYear)";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            $_SESSION['userId'] = $userId;
+            $_SESSION['Sstatus'] = 1;
+            $_SESSION['role'] = 'user';
+            header("Location: pref.php");
+            exit;
+            }
+        } 
+    
+                ?>
+  <!-- Sign Up Form -->
                 <div id="signUpForm" style="display: none;">
                     <div class="header">
                         <div class="header-left">
@@ -128,51 +176,36 @@
                                 <img id="eyeShown3" src="../images/LogIn_Images/Eye.png" alt="" style="display: none;" onclick="showConfirmContent()">
                                 <img id="eyeOff3" src="../images/LogIn_Images/Eye off.png" alt="" style="display: none;" onclick="hideConfirm()">
                             </div>
-                        <input name="sign" type="submit" id="singInOrUp" value="Sign Up">
+                        <p id="Wrong" style="display: none; color: red; text-align: center;">Password mismatch!</p>
+
+                        <input id = "su" type="submit" name="sign"  value="Sign Up">
+
+
+
+        
                     </form>
+                    <script>
+var wrongEmail = <?php echo json_encode($wrongEmail); ?>;
+        if(wrongEmail){
+            document.getElementById('Wrong2').style.display = 'flex';
+        }
+</script>
+                    <script>
+var emailExists = <?php echo json_encode($emailExists); ?>;
+    if (emailExists) {
+        document.getElementById('Wrong2').style.display = 'flex';
+        document.getElementById('loginForm').style.display = 'none';  
+        document.getElementById('signUpForm').style.display = 'flex'; 
+    }
+
+</script>
                     <p>Already have an account? <a href="#" id="loginLink">Sign In</a></p>
                 </div>
-                <?php
-
-                if(isset($_POST['sign'])){
-
-            $email = trim($_POST['signUpEmail']);
-            $email = strtolower($email);
-            $userpassword = trim($_POST['signUpPassword']);
-            $userConfirm = trim($_POST['confirmPassword']);
-
-            if ($userpassword != $userConfirm) {
-
-                echo "<p style='color:red;'>Password missmatch!</p>";
-                exit;
-            }
-
-            $query = 'Select userEmail, userPass, userId from bookUser where userEmail =\'' . $email . '\' and userPass =\'' . $userpassword . "'";
-            $stmt = $conn->prepare($query);
-            $stmt->execute();
-            $info = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-
-            if ($stmt->rowCount() != 0) {
-
-                echo "<p style='color:red;'>Email is already taken!</p>";
-
-                exit;
-            } else {
-                header("Location: pref.php"); 
-                exit;
-            }
-    
-
-
-
-            header("Location: Project.php"); 
-            
-        } 
-        ?>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+
 </body>
+
 </html>

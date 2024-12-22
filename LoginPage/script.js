@@ -1,8 +1,11 @@
 
 console.log("Working");
 document.getElementById('forgotPassword').addEventListener('click', function(event) {
+    event.preventDefault(); 
     alert('Forgot password functionality not implemented.');
 });
+
+
 
 document.getElementById('signUpLink').addEventListener('click', function(event) {
     event.preventDefault(); 
@@ -17,15 +20,17 @@ document.getElementById('loginLink').addEventListener('click', function(event) {
 
 
 
-function checkPassword(){
+document.getElementById('su').addEventListener('click', function(event) {
+
     const pass = document.getElementById("signUpPassword").value;
     const confirmPass = document.getElementById("confirmPassword").value;
 
     if(pass != confirmPass){
-        alert("Password doesn't match");
-
+        event.preventDefault(); 
+        document.getElementById('Wrong').style.display = 'flex';  
     }
-}
+});
+
 
 
 function showPassword(){
