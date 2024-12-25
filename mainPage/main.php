@@ -114,8 +114,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'user') {
             <input type="text" id="add" name="add" style = "display: none;">
             <input type="text" id="rmvB" name="rmvB" style = "display: none;">
             </form>
-            
-            
+
             <script>
 function addToFav(element) {
     if (element.src.endsWith("icon.svg")) {
@@ -146,7 +145,7 @@ document.querySelectorAll('img').forEach(image => {
 
     });
 
-        } else {
+        } else if(!imageId.startsWith("b")){
             document.getElementById("add").value = "0";
             document.getElementById("rmvB").value = imageId.slice(1);
             const formData = new FormData (document.getElementById("addBook"));
@@ -165,10 +164,40 @@ document.querySelectorAll('img').forEach(image => {
     });
             
 
+        } else if(imageId.startsWith("b")){
+            const formData = new FormData();
+formData.append('BookId', imageId.slice(1)); 
+
+fetch('goToBook.php', { // The PHP file to handle the request
+    method: 'POST',
+    body: formData,
+})
+.then(response => {
+    if (response.redirected) {
+        window.location.href = response.url;
+    } else {
+        return response.text();
+    }
+})
+.then(data => {
+    if (data) {
+        console.log('Server Response:', data);
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+
+            
         }
     });
 });
             </script>
+
+    <?php 
+    ?>      
+            
+            
 
     <?php 
     ?>
@@ -250,7 +279,7 @@ document.querySelectorAll('img').forEach(image => {
 
     });
 
-        } else {
+        } else if(!imageId.startsWith("b")){
             document.getElementById("add").value = "0";
             document.getElementById("rmvB").value = imageId.slice(1);
             const formData = new FormData (document.getElementById("addBook"));
@@ -269,6 +298,31 @@ document.querySelectorAll('img').forEach(image => {
     });
             
 
+        } else if(imageId.startsWith("b")){
+            const formData = new FormData();
+formData.append('BookId', imageId.slice(1)); 
+
+fetch('goToBook.php', { // The PHP file to handle the request
+    method: 'POST',
+    body: formData,
+})
+.then(response => {
+    if (response.redirected) {
+        window.location.href = response.url;
+    } else {
+        return response.text();
+    }
+})
+.then(data => {
+    if (data) {
+        console.log('Server Response:', data);
+    }
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+
+            
         }
     });
 });

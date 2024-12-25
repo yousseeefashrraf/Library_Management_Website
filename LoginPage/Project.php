@@ -46,7 +46,6 @@
                         </div>
                         <p id="Wrong2" style="display: none; color: red; text-align: center;">Email or password doesn't exist!</p>
 
-                        <a href="#" id="forgotPassword">Forgot password?</a>
                         <input id="singInOrUp" type="submit"  name="login"  value = "Log in" >
 
                     </form>

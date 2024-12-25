@@ -1,12 +1,4 @@
 
-console.log("Working");
-document.getElementById('forgotPassword').addEventListener('click', function(event) {
-    event.preventDefault(); 
-    alert('Forgot password functionality not implemented.');
-});
-
-
-
 document.getElementById('signUpLink').addEventListener('click', function(event) {
     event.preventDefault(); 
     document.getElementById('loginForm').style.display = 'none';  

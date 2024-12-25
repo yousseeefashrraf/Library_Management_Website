@@ -197,9 +197,7 @@ span{
     height: 5vh;
 }
 
-.books img{
 
-}
 .books img:hover{
     rotate: 30deg;
     transition: 0.5s ease-in-out;

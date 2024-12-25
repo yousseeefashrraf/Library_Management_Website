@@ -53,11 +53,7 @@ body {
     height: 100%;
     justify-content: space-around;
 }
-#forgotPassword{
-    text-align: end;
-    font-size: 1vw;
-    font-weight: bold;
-}
+
 
 #loginForm{
     display: flex;
