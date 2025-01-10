@@ -30,6 +30,7 @@
 
 - ## 📸 Screenshots
   - ## 🏠 Main Page
+    - <img width="1440" alt="Screenshot 2025-01-10 at 6 23 36 PM" src="https://github.com/user-attachments/assets/3b31d28f-1e50-4a45-bd4f-1ea64a1a7e93" />
 
   - ## 🔐 Login Page
     - <img width="1440" alt="Screenshot 2025-01-10 at 6 22 52 PM" src="https://github.com/user-attachments/assets/a3af9086-bd65-4981-934c-4eec3699ba5a" />
